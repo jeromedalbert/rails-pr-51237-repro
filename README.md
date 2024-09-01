@@ -1,24 +1,24 @@
-# README
+# Minimal example app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Steps to repro (or not repro):
 
-Things you may want to cover:
+1. Run the following commands:
 
-* Ruby version
+    ```
+    bin/setup
+    bin/rails server
+    ```
 
-* System dependencies
+1. Go to http://127.0.0.1:3000/posts/new
+1. Check the page source code, search for the word "namespace"
+1. Observe that `for="namespace_post_title"` and `id="namespace_post_title"` are present.
 
-* Configuration
+### How this app was created
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+$ rails --version
+Rails 7.2.1
+$ rails new myapp
+$ cd myapp
+$ bin/rails generate scaffold post title:string
+```
